@@ -1,5 +1,5 @@
 // Test routes with REST client vscode extension.
-@FirebaseURL = <Your Firebase URL>
+@FirebaseURL = <Your Firebase DB URL>
 
 ###
 
@@ -14,3 +14,45 @@ Content-Type: application/json
     "title": "Hello",
     "message": "test"
 }
+
+###
+
+// Authenctication
+
+@signInApiKey = <Your DB auth api key>
+
+@signUp = https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=
+
+// Registration request
+POST {{signUp}}{{signInApiKey}}
+Content-Type: application/json
+
+{
+    "email": "abc123@email.com",
+    "password": "abc123",
+    "returnSecureToken": true
+}
+
+@idToken = <Your token after you registered>
+
+@signIn = https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=
+
+###
+// Login request
+POST {{signIn}}{{signInApiKey}}
+Content-Type: application/json
+
+{
+    "email": "abc123@email.com",
+    "password": "abc123",
+    "returnSecureToken": true
+}
+
+###
+// Authorized user
+GET {{FirebaseURL}}.json?auth={{idToken}}
+
+###
+// Unauthorized user
+
+GET {{FirebaseURL}}.json
