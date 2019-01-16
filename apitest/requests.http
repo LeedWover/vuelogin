@@ -1,1 +1,16 @@
 // Test routes with REST client vscode extension.
+@FirebaseURL = <Your Firebase URL>
+
+###
+
+GET {{FirebaseURL}}/test.json 
+Content-Type: application/json
+
+###
+POST {{FirebaseURL}}/test.json
+Content-Type: application/json
+
+{
+    "title": "Hello",
+    "message": "test"
+}
