@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+import Movies from "./views/Movies.vue";
 import About from "./views/About.vue";
 import login from "./views/login.vue";
 import registration from "./views/registration.vue";
@@ -14,6 +15,11 @@ export default new Router({
       path: "/",
       name: "home",
       component: Home
+    },
+    {
+      path: "/movies",
+      name: "movies",
+      component: Movies
     },
     {
       path: "/about",
