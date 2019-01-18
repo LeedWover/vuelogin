@@ -46,6 +46,7 @@ export default {
         .signInWithEmailAndPassword(this.email, this.password)
         .then(
           user => {
+            console.log(user);
             const myUser = user.user.email;
             alert(`You are logged in as ${myUser}`);
             

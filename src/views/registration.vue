@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import config from '../db/config'
 import firebase from '@/firebase';
 
 export default {
