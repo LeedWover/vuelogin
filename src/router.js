@@ -6,6 +6,8 @@ import About from "./views/About.vue";
 import login from "./views/login.vue";
 import registration from "./views/registration.vue";
 
+import firebase from 'firebase';
+
 Vue.use(Router);
 
 export default new Router({
@@ -19,7 +21,10 @@ export default new Router({
     {
       path: "/movies",
       name: "movies",
-      component: Movies
+      component: Movies,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: "/about",

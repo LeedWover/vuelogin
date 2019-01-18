@@ -29,9 +29,7 @@
 
 <script>
 import config from '../db/config'
-import firebase from 'firebase/app';
-require("firebase/auth");
-firebase.initializeApp(config);
+import firebase from '@/firebase';
 
 export default {
   name: "registration",
